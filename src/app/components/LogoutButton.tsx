@@ -14,9 +14,9 @@ export default function LogoutButton() {
   return (
     <button
       onClick={handleSignOut}
-      className="w-full flex justify-center items-center px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 focus:ring-4 focus:ring-emerald-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+      className="btn btn-primary btn-wide text-white bg-gradient-to-r from-[#e600ff] via-[#6800ff] to-[#00b8ff] border-none shadow-[0_0_18px_rgba(230,0,255,0.65)] hover:shadow-[0_0_25px_rgba(0,239,255,0.9)]"
     >
-      Se deconnecter
+      Se déconnecter
     </button>
   );
 }

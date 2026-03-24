@@ -25,12 +25,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} 
-      data-theme="cupcake"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme="cyberpunk"
     >
-      <body className="min-h-full flex flex-col">
-     {children}
-        </body>
+      <body className="min-h-full flex flex-col bg-[#020416] text-[#e0ccff]">
+        {children}
+      </body>
     </html>
   );
 }

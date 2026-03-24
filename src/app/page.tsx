@@ -115,10 +115,10 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)]">
         <div className="flex flex-col items-center space-y-4">
           <RingLoader size={50} color="#10b981" />
-          <p className="text-gray-600">Chargement des sondages...</p>
+          <p className="text-[#d3c6ff]">Chargement des sondages...</p>
         </div>
       </div>
     );
@@ -126,28 +126,28 @@ export default function Home() {
 
   if (!currentUser) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)]">
         <div className="max-w-md w-full space-y-8 p-8">
-          <div className="bg-white rounded-3xl shadow-xl border border-emerald-100 p-8 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg">
+          <div className="card card-compact holo-edge bg-[#0f0035]/70 backdrop-blur-lg shadow-[0_0_24px_rgba(189,1,255,0.5)] border border-[#9f4eff] p-8 text-center">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-[#ffda57] via-[#ff5abf] to-[#b602ff] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(255,229,82,0.45)]">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Connexion requise</h2>
-            <p className="text-gray-600 mb-6">Vous devez être connecté pour participer aux sondages</p>
+            <h2 className="text-2xl font-bold text-slate-100 mb-2">Connexion requise</h2>
+            <p className="text-[#d3c6ff] mb-6">Vous devez être connecté pour participer aux sondages</p>
             <div className="space-y-3">
               <a
                 href="/login"
-                className="block w-full px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="btn-glow relative block w-full px-6 py-3 text-center font-semibold rounded-xl overflow-hidden"
               >
                 Se connecter
               </a>
               <a
                 href="/register"
-                className="block w-full px-6 py-3 bg-white border-2 border-emerald-500 text-emerald-600 font-semibold rounded-xl hover:bg-emerald-50 transition-all duration-200"
+                className="btn-glow relative block w-full px-6 py-3 text-center font-semibold rounded-xl overflow-hidden"
               >
-                S'inscrire
+                S&apos;inscrire
               </a>
             </div>
           </div>
@@ -157,12 +157,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-8">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)] py-8">
       <div className="max-w-4xl mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Sondages Disponibles</h1>
-          <p className="text-gray-600">Participez aux sondages et consultez les résultats</p>
+          <h1 className="text-4xl font-bold text-slate-100 mb-2">Sondages Disponibles</h1>
+          <p className="text-[#d3c6ff]">Participez aux sondages et consultez les résultats</p>
         </div>
 
         {/* Error message */}
@@ -180,17 +180,17 @@ export default function Home() {
         {/* Sondages */}
         <div className="space-y-6">
           {sondages.length === 0 ? (
-            <div className="bg-white rounded-3xl shadow-xl border border-emerald-100 p-8 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="card card-compact bg-[#0f0035]/80 backdrop-blur-lg shadow-[0_0_24px_rgba(189,1,255,0.5)] border border-[#9f4eff] p-8 text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-[#b602ff] via-[#7b00ff] rounded-2xl flex items-center justify-center shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Aucun sondage disponible</h3>
-              <p className="text-gray-600 mb-4">Soyez le premier à créer un sondage !</p>
+              <h3 className="text-xl font-semibold text-slate-100 mb-2">Aucun sondage disponible</h3>
+              <p className="text-[#d3c6ff] mb-4">Soyez le premier à créer un sondage !</p>
               <a
                 href="/sondage"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="btn-glow relative inline-flex items-center px-6 py-3 font-semibold rounded-xl overflow-hidden"
               >
                 Créer un sondage
               </a>
@@ -204,10 +204,10 @@ export default function Home() {
               );
 
               return (
-                <div key={sondage._id} className="bg-white rounded-3xl shadow-xl border border-emerald-100 p-8">
+                <div key={sondage._id} className="card card-compact bg-[#0f0035]/80 backdrop-blur-lg shadow-[0_0_24px_rgba(189,1,255,0.5)] border border-[#9f4eff] p-8">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{sondage.question}</h3>
-                    <p className="text-gray-600 text-sm">
+                    <h3 className="text-2xl font-bold text-slate-100 mb-2">{sondage.question}</h3>
+                    <p className="text-[#d3c6ff] text-sm">
                       {totalVotes} vote{totalVotes !== 1 ? 's' : ''} • Créé le {new Date(sondage.createdAt).toLocaleDateString('fr-FR')}
                     </p>
                   </div>
@@ -216,16 +216,16 @@ export default function Home() {
                     <div className="space-y-4">
                       <div className="space-y-3">
                         {sondage.options.map((option, index) => (
-                          <label key={index} className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 cursor-pointer">
+                          <label key={index} className="flex items-center p-4 border border-[#5f33ac] rounded-xl hover:border-[#c567ff] hover:bg-[#2f004f] transition-all duration-200 cursor-pointer">
                             <input
                               type="radio"
                               name={`sondage-${sondage._id}`}
                               value={option}
                               checked={selectedOptions[sondage._id] === option}
                               onChange={(e) => setSelectedOptions(prev => ({ ...prev, [sondage._id]: e.target.value }))}
-                              className="w-4 h-4 text-emerald-600 border-gray-300 focus:ring-emerald-500"
+                              className="w-4 h-4 text-[#8f7cfe] border-[#9a58ff] focus:ring-[#9a5cff]"
                             />
-                            <span className="ml-3 text-gray-700 font-medium">{option}</span>
+                            <span className="ml-3 text-[#f6f1ff] font-medium">{option}</span>
                           </label>
                         ))}
                       </div>
@@ -233,7 +233,7 @@ export default function Home() {
                       <button
                         onClick={() => handleVote(sondage._id)}
                         disabled={!selectedOptions[sondage._id] || voting[sondage._id]}
-                        className="w-full flex justify-center items-center px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 focus:ring-4 focus:ring-emerald-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        className="w-full flex justify-center items-center px-6 py-4 btn-glow relative w-full flex justify-center items-center px-6 py-4 font-semibold rounded-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {voting[sondage._id] ? (
                           <div className="flex items-center space-x-3">
@@ -252,7 +252,7 @@ export default function Home() {
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-800 mb-4">Résultats</h4>
+                      <h4 className="text-lg font-semibold text-slate-100 mb-4">Résultats</h4>
                       <div className="space-y-3">
                         {sondage.options.map((option, index) => {
                           const count = voteCounts[option] || 0;
@@ -261,12 +261,12 @@ export default function Home() {
                           return (
                             <div key={index} className="relative">
                               <div className="flex justify-between items-center mb-1">
-                                <span className="text-gray-700 font-medium">{option}</span>
-                                <span className="text-sm text-gray-600">{count} vote{count !== 1 ? 's' : ''} ({percentage.toFixed(1)}%)</span>
+                              <span className="text-[#f6f1ff] font-medium">{option}</span>
+                                <span className="text-sm text-[#d3c6ff]">{count} vote{count !== 1 ? 's' : ''} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 rounded-full h-3">
+                              <div className="w-full bg-[#202051] rounded-full h-3">
                                 <div
-                                  className="bg-gradient-to-r from-emerald-400 to-teal-500 h-3 rounded-full transition-all duration-500"
+                                  className="bg-gradient-to-r from-[#b602ff] to-[#00b8ff] h-3 rounded-full transition-all duration-500"
                                   style={{ width: `${percentage}%` }}
                                 ></div>
                               </div>
@@ -274,8 +274,8 @@ export default function Home() {
                           );
                         })}
                       </div>
-                      <div className="text-center pt-4 border-t border-gray-200">
-                        <p className="text-emerald-600 font-medium">Vous avez participé à ce sondage</p>
+                      <div className="text-center pt-4 border-t border-[#5f33ac]">
+                        <p className="text-[#8f7cfe] font-medium">Vous avez participé à ce sondage</p>
                       </div>
                     </div>
                   )}
@@ -289,7 +289,7 @@ export default function Home() {
         <div className="mt-8 text-center">
           <a
             href="/sondage"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl mr-4"
+            className="btn-glow relative inline-flex items-center px-6 py-3 font-semibold rounded-xl overflow-hidden mr-4"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
