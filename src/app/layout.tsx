@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LogoutButton from "./components/LogoutButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-theme="cyberpunk"
     >
-      <body className="min-h-full flex flex-col bg-[#020416] text-[#e0ccff]">
+      <body className="min-h-full flex flex-col bg-[#020416] text-[#e0ccff] relative">
         {children}
       </body>
     </html>

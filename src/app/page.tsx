@@ -115,7 +115,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)]">
+      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,#2a073f,#120238,#020114)]">
         <div className="flex flex-col items-center space-y-4">
           <RingLoader size={50} color="#10b981" />
           <p className="text-[#d3c6ff]">Chargement des sondages...</p>
@@ -126,10 +126,10 @@ export default function Home() {
 
   if (!currentUser) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)]">
+      <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,#2a073f,#120238,#020114)] ">
         <div className="max-w-md w-full space-y-8 p-8">
           <div className="card card-compact holo-edge bg-[#0f0035]/70 backdrop-blur-lg shadow-[0_0_24px_rgba(189,1,255,0.5)] border border-[#9f4eff] p-8 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-[#ffda57] via-[#ff5abf] to-[#b602ff] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(255,229,82,0.45)]">
+            <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-r from-[#ffda57] via-[#ff5abf] to-[#b602ff] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(255,229,82,0.45)]">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -157,7 +157,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#2a073f,_#120238,_#020114)] py-8">
+    <div className="min-h-screen  bg-[radial-gradient(circle_at_top,#2a073f,#120238,#020114)] py-8">
       <div className="max-w-4xl mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="space-y-6">
           {sondages.length === 0 ? (
             <div className="card card-compact bg-[#0f0035]/80 backdrop-blur-lg shadow-[0_0_24px_rgba(189,1,255,0.5)] border border-[#9f4eff] p-8 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-[#b602ff] via-[#7b00ff] rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-r from-[#b602ff] via-[#7b00ff] rounded-2xl flex items-center justify-center shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -233,7 +233,7 @@ export default function Home() {
                       <button
                         onClick={() => handleVote(sondage._id)}
                         disabled={!selectedOptions[sondage._id] || voting[sondage._id]}
-                        className="w-full flex justify-center items-center px-6 py-4 btn-glow relative w-full flex justify-center items-center px-6 py-4 font-semibold rounded-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full flex justify-center items-center px-6 py-4 btn-glow relative font-semibold rounded-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {voting[sondage._id] ? (
                           <div className="flex items-center space-x-3">
@@ -266,7 +266,7 @@ export default function Home() {
                               </div>
                               <div className="w-full bg-[#202051] rounded-full h-3">
                                 <div
-                                  className="bg-gradient-to-r from-[#b602ff] to-[#00b8ff] h-3 rounded-full transition-all duration-500"
+                                  className="bg-linear-to-r from-[#b602ff] to-[#00b8ff] h-3 rounded-full transition-all duration-500"
                                   style={{ width: `${percentage}%` }}
                                 ></div>
                               </div>
@@ -299,10 +299,10 @@ export default function Home() {
         </div>
 
         {/* Logout button */}
-        <div className="absolute bottom-4 right-4">
+      </div>
+       <div className="absolute bottom-0 right-2 pr-3 pb-3">
           <LogoutButton />
         </div>
-      </div>
     </div>
   );
 }
